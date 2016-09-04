@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :comments
 end
  
-  get '/home', to: 'welcome#index'
+get '/home', to: 'welcome#index'
 end
