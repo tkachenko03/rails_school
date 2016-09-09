@@ -11,7 +11,16 @@
     <textarea name="text" id="article_text">
 </textarea>
   </p>
- 
+   <p>
+    <label for="article_category_id">Категория</label>
+    <br>
+    <select name="category_id" id="article_category_id">
+      <option disabled>Выберите категорию</option>
+      <% @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+  </p>
 
 
 </div>

@@ -3,18 +3,22 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @categories = Category.all
   end
 
   def show
     @article = Article.find(params[:id])
+    @categories = Category.all
   end
 
 	def new
 	  @article = Article.new
+    @categories = Category.all
 	end
  
 	def edit
 	  @article = Article.find(params[:id])
+    @categories = Category.all
 	end
 
 	def create
@@ -42,8 +46,9 @@ class ArticlesController < ApplicationController
  
   end
 
-private
-  def article_params
-    params.permit(:title, :text)
-  end
+  private
+    def article_params
+      params.permit(:title, :text, :category_id)
+    end
+
 end
