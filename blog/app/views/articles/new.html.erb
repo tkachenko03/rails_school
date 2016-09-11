@@ -1,16 +1,11 @@
-<button class="save-article">Сохранить</button> 
-<button class="cancel-article"><%= link_to 'Отмена', articles_path %></button>
- <%= link_to 'New category', new_category_path %>
-<div class="d_new_article">
+  <%= render 'layouts/menu' %>
   <h1>Новая статья</h1>
-  <form id="new_article" accept-charset="UTF-8">
-    <%= render 'form' %>
 
-  </form>
-    <div>
-      
+      <form id="new_article" accept-charset="UTF-8">
+        <%= render 'form' %>
+      </form>
 
-    </div>
-</div>
+
+    <button class="save-article btn-primary" >Сохранить</button>
 
 

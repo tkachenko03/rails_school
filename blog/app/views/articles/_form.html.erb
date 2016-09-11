@@ -1,28 +1,26 @@
 
- 
-<div class="formArticle"> 
-  <p>
-    <label for="article_title">Заголовок</label><br>
-    <input type="text" name="title" id="article_title" />
-  </p>
- 
-  <p>
-    <label for="article_text">Статья</label><br>
-    <textarea name="text" id="article_text">
-</textarea>
-  </p>
-   <p>
-    <label for="article_category_id">Категория</label>
-    <br>
-    <select name="category_id" id="article_category_id">
-      <option disabled>Выберите категорию</option>
-      <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-      <% end %>
-    </select>
-  </p>
-
-
-</div>
- 
+  <!-- single -->
+	<div class="single">
+    <div class="formArticle"> 
+        <p>
+          <label for="article_title">Заголовок</label><br>
+          <input type="text" name="title" id="article_title" />
+        </p>
+       
+        <p>
+          <label for="article_text">Статья</label><br>
+          <textarea name="text" id="article_text">
+          </textarea>
+        </p>
+         <p>
+          <label for="article_category_id">Категория</label>
+          <br>
+          <select name="category_id" id="article_category_id">
+            <option disabled>Выберите категорию</option>
+            <% @categories.each do |category| %>
+              <option value="<%= category.id %>"><%= category.name %></option>
+            <% end %>
+          </select>
+        </p>
+	    </div>
 

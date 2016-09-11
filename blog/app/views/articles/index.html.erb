@@ -1,21 +1,28 @@
-<h1>Listing articles</h1>
- <%= link_to 'New article', new_article_path %>
- <%= link_to 'Categories', categories_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr data-article_id="<%=article.id%>">
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><span class="delete-article" style="cursor: pointer;">Destroy</span></td>
-    </tr>
-  <% end %>
-</table>
+  <%= render 'layouts/menu' %>
+  <h1> Список статей </h1>
+ <!-- single -->
+	<div class="single">
+		<div class="blog-left">
+			<div class="blog-left-info">
+            <table class="table">
+             <% @articles.reverse_each do |article| %>
+                  <tr data-item_id="<%= article.id %>">
+                    <td><button type="button" class="delete-article btn btn-danger btn-xs">x</button></td>
+                    <td>
+                       <div class="article-item " onclick="location.href='<%= article_path(article) %>';" style="cursor: pointer;">
+                         <h3><a><%= article.title %></a></h3>
+                         <p><%= article.text %></p>
+                       </div>
+                    </td>
+                  </tr>
+              <% end %>
+            </table>
+			</div>
+ 	</div>
+		<div class="clearfix"> </div>
+</div>
+
+
+
+
 

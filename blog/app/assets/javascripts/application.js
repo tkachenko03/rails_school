@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //=require jquery_ujs
 //=require turbolinks
 //= require_tree .
+
 jQuery(function ($) {
     $(document).ready(function(){
 
@@ -49,9 +51,9 @@ jQuery(function ($) {
 	      $(".delete-article").click( function(event){
           event.preventDefault();
 		      var current_article_tr = $(this).parents('tr')[0];
-		        if(confirm("Точно удалить?")) {
+		        if(confirm("Точно удалить эту статью?")) {
 			        $.ajax({
-				        url: '/articles/' + $(current_article_tr).attr('data-article_id'),
+				        url: '/articles/' + $(current_article_tr).attr('data-item_id'),
 				        type: 'DELETE',
 				          success: function (result) {
 					          $(current_article_tr).fadeOut(200);

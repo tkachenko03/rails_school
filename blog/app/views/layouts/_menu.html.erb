@@ -1,0 +1,30 @@
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+
+	<div class="psd">
+	<div class="container">
+<!-- header -->
+		<div class="header">
+			<div class="logo">
+
+			</div>
+			<div class="logo-right">
+				
+<ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Создать<span class="caret"></span></a>
+              <ul class="dropdown-menu text-center">
+                <li><%= link_to 'Статью', new_article_path %></li>
+                <li><%= link_to 'Категорию статей', new_category_path %></li>
+              </ul>
+            </li>
+            <li class="new-article"><%= link_to 'Статьи', articles_path  %></li>
+            <li class="new-article"><%= link_to 'Категории', categories_path  %></li>
+          </ul>
+			</div>
+			<div class="clearfix"> </div>
+				
+		</div>
+<!-- //header -->
+
+  

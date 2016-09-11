@@ -1,16 +1,13 @@
- 
- <%= link_to 'New category', new_category_path %>
-
-      <h1>Список категорий</h1>
-      <table class="category-list">
-
-
-        <% @categories.each do |category|%>
+    <%= render 'layouts/menu' %>
+     <h1>Список категорий</h1>
+	<div class="single">
+      <table class="table">
+       <% @categories.each do |category|%>
             <tr data-item_id="<%= category.id %>">
-              <td><%= category.name %></td>
-              <td><%= link_to 'Показать', category_path(category) %></td>
-              <td><span class="delete-category" style="cursor: pointer;">Destroy</span></td>
+              <td><button type="button" class="delete-category btn btn-danger btn-xs">x</button></td>
+              <td><%= link_to category.name, category_path(category) %></td>
             </tr>
         <% end %>
       </table>
+  </div>
 

@@ -1,18 +1,53 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
  
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
- 
-<h2>Comments</h2>
-<%= render @article.comments %>
- 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
- 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+ <%= render 'layouts/menu' %>
+ <!-- single -->
+	<div class="single">
+		<div class="blog-left">
+			<div class="blog-left-info">
+				<h3><%= @article.title %></h3>
+				
+
+				<p><%= @article.text %></p>
+			</div>
+
+
+		</div>
+		
+		<div class="clearfix"> </div>
+		<div class="three-com">
+				
+				<div class="tom-grid">
+<% @article.comments.each do |comment| %>
+
+					<div class="tom">
+						<img src="/images/co.png" alt=" " />
+					</div>
+					<div class="tom-right">
+						<div class="Hardy">
+
+							<h4><%= comment.commenter %></h4>
+							<p><label><%= comment.created_at %></label></p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+						</div>
+						<p class="lorem"><%= comment.body %></p>
+						
+					</div>
+				<div class="clearfix"> </div>
+<% end %>
+
+
+				</div>
+			</div>
+			<div class="leave-comment">
+				<h3>Оставьте свой комментарий</h3>
+        <%= render 'comments/form' %>
+			</div>
+	</div>
+
+	</div>
+	</div>
+
+
+

@@ -1,11 +1,9 @@
-
+  <%= render 'layouts/menu' %>
 <h1><%= @category.name %></h1>
-
+<div class="single">
 <p>
 
-  <%= @category.name %>
-
-    <table class="article-list"> 
+    <table class="table"> 
       <% @articles.reverse_each do |article| %>
         <tr data-article_id="<%= article.id %>">
         <td><%= article.title %></td>
@@ -14,3 +12,5 @@
       <% end %>
  </table>
 </p>
+
+    </div>
