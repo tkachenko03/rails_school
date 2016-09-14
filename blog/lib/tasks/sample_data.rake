@@ -1,0 +1,31 @@
+require 'factory_girl_rails'
+FactoryGirl.find_definitions
+require 'faker'
+
+namespace :db do
+  desc "reset and fill database"
+  task populate: :environment do
+    Rake::Task['db:reset'].invoke
+    require Rails.root.join('lib/factories.rb')
+    10.times do |cat|
+      count = 1 + rand(10)
+      category = FactoryGirl.create(:category, {:name => Faker::Book.genre})
+      count.times do |art|
+        article = FactoryGirl.create(:article, {:title => Faker::Book.title, :text => Faker::Lorem.paragraph, :category_id => category.id})
+        2.times do
+          FactoryGirl.create(:comment, {:body => Faker::Lorem.paragraph, :article_id => article.id})
+        end
+      end
+
+    end
+  end
+  desc "delete old article from category"
+  task clean_db: :environment do
+
+      Category.all.find_each do |c|
+        articles_id = c.articles.order(updated_at: :desc).limit(5).pluck(:id)
+        c.articles.where.not(id: articles_id).destroy_all
+      end
+  end
+
+end
