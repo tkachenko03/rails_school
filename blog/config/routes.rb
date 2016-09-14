@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
  
+  get 'persons/profile'
+
+  devise_for :users
   resources :articles do
   resources :comments
 end
@@ -8,5 +11,7 @@ end
 
   end
  
-get '/home', to: 'welcome#index'
+root 'welcome#index'
+get 'persons/profile', as: 'user_root'
+
 end

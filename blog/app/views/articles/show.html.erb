@@ -26,7 +26,7 @@
 					<div class="tom-right">
 						<div class="Hardy">
 
-							<h4><%= comment.commenter %></h4>
+							<h4><%= comment.author %></h4>
 							<p><label><%= comment.created_at %></label></p>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
