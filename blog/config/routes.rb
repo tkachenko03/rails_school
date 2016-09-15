@@ -12,6 +12,5 @@ end
   end
  
 root 'welcome#index'
-get 'persons/profile', as: 'user_root'
 
 end

@@ -1,0 +1,2 @@
+class NewCommentMailerController < ApplicationController
+end

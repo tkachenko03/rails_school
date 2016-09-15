@@ -8,6 +8,8 @@
 				
 
 				<p><%= @article.text %></p>
+        <p>Автор: <%= @user.name %>, <%= @user.email %>. Создана: <%= @article.created_at %> (<%= time_ago_in_words(@article.created_at) %> назад)</p>
+
 			</div>
 
 

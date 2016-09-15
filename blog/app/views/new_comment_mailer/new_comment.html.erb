@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+  <body>
+    <p>
+      Cтатье <strong><%= @article.title %></strong> добавлен комментарий.<br>
+    </p>
+    <p> 
+      автор:
+      <strong><%= @comment.author %></strong> 
+      <%= @comment.body %>
+    </p>
+  </body>
+</html>

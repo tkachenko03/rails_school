@@ -23,13 +23,6 @@ namespace :db do
 
   desc "delete old article from category"
   task clean_db: :environment do
-    # categories_length = Category.all.length
-    # categories_length.times do |c|
-    #   cat_index = c + 1
-    #   articles_id = Article.where(category_id: cat_index.to_s).order("updated_at desc").limit(5).pluck(:id)
-    #   articles = Article.where(category_id: cat_index.to_s)
-    #   articles.where.not(id: articles_id).destroy_all
-    # end
 
       Category.all.find_each do |c|
         articles_id = c.articles.order(updated_at: :desc).limit(5).pluck(:id)
