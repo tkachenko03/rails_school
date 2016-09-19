@@ -1,10 +1,39 @@
-<h1>Hello, Rails!</h1>
+
+    <head>
+        <meta charset="UTF-8" />
+ 
+        <link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+
+
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+             <header>
+                <h1>Hello, Rails! <span><%= link_to 'My Blog', controller: 'articles' %></span></h1>
+
+          
+
+
+
 
 <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.email %></span>
     <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
 <br>
-<%= link_to 'My Blog', controller: 'articles' %>
+
+
 <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
 <% end %>
+            </header>
+        </div>
+    </body>
+</html>
+<h2>Log in</h2>
+

@@ -1,11 +1,15 @@
   <%= render 'layouts/menu' %>
   <h1>Новая статья</h1>
-
+	<div class="single">
       <form id="new_article" accept-charset="UTF-8">
         <%= render 'form' %>
       </form>
+   <button class="save-article btn-primary" >Сохранить</button>
 
+		<div class="clearfix"> </div>
+	</div>
+<%= link_to 'Back', articles_path %>
+	</div>
 
-    <button class="save-article btn-primary" >Сохранить</button>
-
+	</div>
 

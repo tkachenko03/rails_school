@@ -1,3 +1,30 @@
+
+
+
+    <head>
+        <meta charset="UTF-8" />
+ 
+        <link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/LoginRegistrationForm/css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+
+
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+             <header>
+                <h1>Login and Registration Form <span>Blog</span></h1>
+
+            </header>
+            <section>				
+                <div id="container_demo" >
+
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,3 +54,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
+<h2>Log in</h2>

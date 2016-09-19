@@ -7,12 +7,15 @@
             <table class="table">
              <% @articles.reverse_each do |article| %>
                   <tr data-item_id="<%= article.id %>">
-                    <td><button type="button" class="delete-article btn btn-danger btn-xs">x</button></td>
+
                     <td>
                        <div class="article-item " onclick="location.href='<%= article_path(article) %>';" style="cursor: pointer;">
                          <h3><a><%= article.title %></a></h3>
                          <p><%= article.text %></p>
                        </div>
+                        <% if user_signed_in? %>
+                                            <td><button type="button" class="delete-article btn btn-danger btn-xs">удалить</button></td>
+                        <% end %>
                     </td>
                   </tr>
               <% end %>

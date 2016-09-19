@@ -10,8 +10,11 @@
 				<p><%= @article.text %></p>
         <p>Автор: <%= @user.name %>, <%= @user.email %>. Создана: <%= @article.created_at %> (<%= time_ago_in_words(@article.created_at) %> назад)</p>
 
-			</div>
 
+			</div>
+                        <% if user_signed_in? %>
+                                            <td><button type="button" class=" btn "><%= link_to 'Edit', edit_article_path(@article) %></button></td>
+                        <% end %>
 
 		</div>
 
@@ -30,9 +33,11 @@
 
 							<h4><%= comment.author %></h4>
 							<p><label><%= comment.created_at %></label></p>
+<% if user_signed_in? %>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+<% end %>
 						</div>
 						<p class="lorem"><%= comment.body %></p>
 						
